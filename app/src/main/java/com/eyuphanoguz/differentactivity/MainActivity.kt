@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 
 class MainActivity : AppCompatActivity() {
@@ -21,5 +22,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(applicationContext, IkinciActivity::class.java)
         intent.putExtra("yollananVeri",kullaniciVerisi)
         startActivity(intent)
+        //finish() bu sayfadan ciktiktan sonra daha geri donulmez yani destroy metodu cagrildi
+    }
+
+    fun showMessage(view: View){
+        Toast.makeText(this,"WELCOME",Toast.LENGTH_LONG).show()
     }
 }
